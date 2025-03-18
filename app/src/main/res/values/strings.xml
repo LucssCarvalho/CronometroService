@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CronometroService</string>
+    <string name="name_stopwatch">nome do cronometro</string>
+    <string name="time_stopwatch">Tempo do cronometro</string>
+    <string name="button_save">Salvar</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
