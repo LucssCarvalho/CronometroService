@@ -22,4 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "CronometroService"
 include ':app'
 include ':stopwatchservice'
-
+include ':NotificationService'
