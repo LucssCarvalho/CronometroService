@@ -14,10 +14,12 @@
         android:theme="@style/Theme.CronometroService">
 
         <service
-            android:name=".CountdownService"
+            android:name="com.carvalho.stopwatchservice.CountdownService"
+            android:enabled="true"
             android:exported="true">
+
             <intent-filter>
-                <action android:name="com.carvalho.stopwatchservice.START" />
+                <action android:name="com.carvalho.stopwatchservice.COUNTDOWN_SERVICE" />
             </intent-filter>
         </service>
 

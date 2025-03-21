@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = StopwatchAdapter()
+        adapter = StopwatchAdapter(application.applicationContext)
         binding.rvStopWatch.layoutManager = LinearLayoutManager(this)
         binding.rvStopWatch.adapter = adapter
 

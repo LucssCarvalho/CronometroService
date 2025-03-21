@@ -23,3 +23,4 @@ rootProject.name = "CronometroService"
 include ':app'
 include ':stopwatchservice'
 
+include ':Wrapper'

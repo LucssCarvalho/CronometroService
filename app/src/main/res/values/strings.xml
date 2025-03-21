@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CronometroService</string>
+    <string name="app_name">DemoTerminal</string>
     <string name="name_stopwatch">nome do cronometro</string>
     <string name="time_stopwatch">Tempo do cronometro</string>
     <string name="button_save">Salvar</string>

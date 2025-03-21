@@ -1,7 +1,6 @@
 package com.carvalho.cronometroservice.demo.adapter
 
-import android.content.ComponentName
-import android.content.Intent
+import android.content.Context
 import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,8 +10,9 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.carvalho.cronometroservice.databinding.ItemStopwatchBinding
 import com.carvalho.cronometroservice.demo.model.Stopwatch
+import com.carvalho.wrapper.CountdownClient
 
-class StopwatchAdapter : RecyclerView.Adapter<StopwatchViewHolder>() {
+class StopwatchAdapter(private val context: Context) : RecyclerView.Adapter<StopwatchViewHolder>() {
     private var items = listOf<Stopwatch>()
 
     fun fetchItems(newItems: List<Stopwatch>) {
@@ -21,10 +21,8 @@ class StopwatchAdapter : RecyclerView.Adapter<StopwatchViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StopwatchViewHolder {
-        val view = ItemStopwatchBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
-        )
-        return StopwatchViewHolder(view)
+        val view = ItemStopwatchBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return StopwatchViewHolder(view, context)
     }
 
     override fun getItemCount(): Int = items.size
@@ -35,8 +33,12 @@ class StopwatchAdapter : RecyclerView.Adapter<StopwatchViewHolder>() {
     }
 }
 
-class StopwatchViewHolder(private val binding: ItemStopwatchBinding) :
+class StopwatchViewHolder(private val binding: ItemStopwatchBinding, private val context: Context) :
     RecyclerView.ViewHolder(binding.root) {
+    private val countdownClient = CountdownClient(context)
+
+
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun bind(item: Stopwatch) {
         binding.tvStopwatch.text = "${item.name} - Timer: ${item.time}"
@@ -46,21 +48,19 @@ class StopwatchViewHolder(private val binding: ItemStopwatchBinding) :
 
             val context = binding.root.context
 
-            val intent = Intent().apply {
-                component = ComponentName(
-                    "com.carvalho.stopwatchservice",
-                    "com.carvalho.stopwatchservice.CountdownService"
-                )
-                putExtra("EXTRA_TIME", item.time)
-            }
-
             try {
-                context.startForegroundService(intent)
-                Log.d("ItemHolder", "Serviço iniciado com sucesso!")
+                countdownClient.bindService()
+//                countdownClient.startCountdown(item.time)
+                Log.d("ItemHolder", "Comando Enviando!")
             } catch (e: Exception) {
-                Log.e("ItemHolder", "Erro ao iniciar serviço: ${e.message}")
-                Toast.makeText(context, "Erro ao iniciar serviço", Toast.LENGTH_SHORT).show()
+                Log.e("ItemHolder", "Erro ao iniciar contagem: ${e.message}")
+                Toast.makeText(binding.root.context, "Erro ao iniciar contagem", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
+    }
+
+    fun onViewRecycled() {
+        countdownClient.unbindService()
     }
 }
