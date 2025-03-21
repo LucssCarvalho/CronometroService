@@ -1,4 +1,4 @@
-package com.carvalho.cronometroservice.demo.adapter
+package com.carvalho.demoapp.adapter
 
 import android.content.Context
 import android.os.Build
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.carvalho.cronometroservice.demo.model.Stopwatch
 import com.carvalho.demoapp.databinding.ItemStopwatchBinding
+import com.carvalho.demoapp.model.Stopwatch
 import com.carvalho.wrapper.CountdownClient
 
 class StopwatchAdapter(private val context: Context) : RecyclerView.Adapter<StopwatchViewHolder>() {
@@ -36,7 +36,6 @@ class StopwatchAdapter(private val context: Context) : RecyclerView.Adapter<Stop
 class StopwatchViewHolder(private val binding: ItemStopwatchBinding, private val context: Context) :
     RecyclerView.ViewHolder(binding.root) {
     private val countdownClient = CountdownClient(context)
-
 
 
     @RequiresApi(Build.VERSION_CODES.O)

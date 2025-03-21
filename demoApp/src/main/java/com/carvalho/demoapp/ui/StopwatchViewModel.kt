@@ -1,10 +1,10 @@
-package com.carvalho.cronometroservice.demo.ui
+package com.carvalho.demoapp.ui
 
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.AndroidViewModel
-import com.carvalho.cronometroservice.demo.model.Stopwatch
+import com.carvalho.demoapp.model.Stopwatch
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

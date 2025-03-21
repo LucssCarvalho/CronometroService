@@ -6,10 +6,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.carvalho.cronometroservice.demo.adapter.StopwatchAdapter
-import com.carvalho.cronometroservice.demo.ui.StopwatchEntryBottomSheet
-import com.carvalho.cronometroservice.demo.ui.StopwatchViewModel
+import com.carvalho.demoapp.adapter.StopwatchAdapter
 import com.carvalho.demoapp.databinding.ActivityMainBinding
+import com.carvalho.demoapp.ui.StopwatchEntryBottomSheet
+import com.carvalho.demoapp.ui.StopwatchViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

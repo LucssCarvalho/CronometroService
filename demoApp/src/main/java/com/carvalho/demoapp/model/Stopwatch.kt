@@ -1,4 +1,4 @@
-package com.carvalho.cronometroservice.demo.model
+package com.carvalho.demoapp.model
 
 data class Stopwatch(
     val id: Int,
