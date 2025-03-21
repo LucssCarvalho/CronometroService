@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.carvalho.cronometroservice.databinding.ItemStopwatchBinding
 import com.carvalho.cronometroservice.demo.model.Stopwatch
+import com.carvalho.demoapp.databinding.ItemStopwatchBinding
 
 class StopwatchAdapter : RecyclerView.Adapter<StopwatchViewHolder>() {
     private var items = listOf<Stopwatch>()
