@@ -1,4 +1,4 @@
-package com.carvalho.cronometroservice.demo
+package com.carvalho.demoapp
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carvalho.cronometroservice.demo.adapter.StopwatchAdapter
-import com.carvalho.cronometroservice.databinding.ActivityMainBinding
 import com.carvalho.cronometroservice.demo.ui.StopwatchEntryBottomSheet
 import com.carvalho.cronometroservice.demo.ui.StopwatchViewModel
+import com.carvalho.demoapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

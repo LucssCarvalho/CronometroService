@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.carvalho.cronometroservice"
+    namespace = "com.carvalho.demoapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.carvalho.cronometroservice"
+        applicationId = "com.carvalho.demoapp"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

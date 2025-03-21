@@ -19,8 +19,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CronometroService"
-include ':app'
+rootProject.name = "TerminalApps"
+include ':demoApp'
 include ':stopwatchservice'
 
 include ':Wrapper'
