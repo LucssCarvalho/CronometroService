@@ -6,8 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.carvalho.cronometroservice.databinding.FragmentStopwatchEntryBinding
 import com.carvalho.cronometroservice.demo.model.Stopwatch
+import com.carvalho.demoapp.databinding.FragmentStopwatchEntryBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.gson.Gson
 import kotlin.random.Random
